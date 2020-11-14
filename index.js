@@ -6,9 +6,9 @@ const mergesort     = require('./algorithms/mergesort');
 const quicksort     = require('./algorithms/quicksort');
 const seletionsort  = require('./algorithms/seletionsort');
 
-let asce = fs.readFileSync(`${__dirname}/data/asce.dat`).toString().split("\n");
-let rand = fs.readFileSync(`${__dirname}/data/rand.dat`).toString().split("\n");
-let desc = fs.readFileSync(`${__dirname}/data/desc.dat`).toString().split("\n");
+let asce = fs.readFileSync(`${__dirname}/data/asce.dat`).toString().split("\n").map(el => Number(el));
+let rand = fs.readFileSync(`${__dirname}/data/rand.dat`).toString().split("\n").map(el => Number(el));
+let desc = fs.readFileSync(`${__dirname}/data/desc.dat`).toString().split("\n").map(el => Number(el));
 
 let asce10k  = asce.slice(0,10000);
 let asce20k  = asce.slice(0,20000);
@@ -38,7 +38,6 @@ let size30k  = rand.length;
 let size100k = rand.length;
 let size200k = rand.length;
 let size300k = rand.length;
-
 
 // ===== CALLS ======
 console.log("=====================")
